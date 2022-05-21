@@ -62,7 +62,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   static const _chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
 
-  final dataTableController = DTableController();
+  final dataTableStateManager = DTableStateManager();
 
   String _getRandomString(int length) =>
       String.fromCharCodes(Iterable.generate(length, (_) => _chars.codeUnitAt(Random().nextInt(_chars.length))));
@@ -94,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(50.0),
           child: DTable(
             data: data,
+            stateManager: dataTableStateManager,
             headerCellPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             bodyCellPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             columnDividerColor: const Color(0xFFFF0000),
