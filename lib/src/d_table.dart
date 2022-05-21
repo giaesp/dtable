@@ -1,12 +1,14 @@
 import 'dart:ui';
 
 import 'package:dtable/src/d_table_body.dart';
+import 'package:dtable/src/d_table_state_manager.dart';
 import 'package:dtable/src/d_table_head.dart';
 import 'package:flutter/material.dart';
 import 'package:linked_scroll_controller/linked_scroll_controller.dart';
 
 class DTable extends StatefulWidget {
   final List<List<String>> data;
+  final DTableStateManager stateManager;
   final BoxDecoration? decoration;
   final EdgeInsets headerCellPadding;
   final EdgeInsets bodyCellPadding;
@@ -19,6 +21,7 @@ class DTable extends StatefulWidget {
   const DTable(
       {Key? key,
       required this.data,
+      required this.stateManager,
       this.decoration,
       this.headerCellPadding = EdgeInsets.zero,
       this.bodyCellPadding = EdgeInsets.zero,
